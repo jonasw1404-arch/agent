@@ -2,7 +2,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
+  overflow: hidden;
+  height: 100%;
   width: 100%;
   background-color: black;
   background-image: url('hintergrund.jpg');
@@ -11,7 +12,6 @@ html, body {
   background-size: cover;
   font-family: Arial, sans-serif;
   color: white;
-  overflow-y: auto; /* Scrollen aktivieren */
 }
 
 /* Start-Rechteck */
@@ -43,33 +43,57 @@ html, body {
 
 /* Missions-Rechtecke */
 #missionContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1400px;
+  z-index: 50;
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Abstand zwischen Reihen */
-  width: 90%;
-  max-width: 1200px;
-  margin: 50px auto; /* oben Abstand und zentriert */
-  padding-bottom: 50px; /* Platz für Scrollen */
-}
-
-/* Jede Reihe */
-.missionRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
 }
 
-/* Einzelne Box */
-.missionBox {
+/* Reihen */
+.missionRow {
+  display: flex;
+  gap: 20px;
+}
+
+/* Erste Reihe: volle Breite für die beiden Boxen */
+.firstRow .missionBox {
+  flex: 1;
+  min-width: 300px;
   background-color: rgba(0,0,0,0.7);
   padding: 20px;
   border-radius: 10px;
-  min-width: 250px;
-  flex: 1 1 250px;
-  box-sizing: border-box;
 }
 
+/* Zweite Reihe: 5 Rätsel nebeneinander */
+.secondRow .missionBox {
+  flex: 1;
+  min-width: 200px;
+  background-color: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Überschriften */
 .missionBox h2 {
   margin-top: 0;
+}
+
+/* Responsive Anpassung */
+@media (max-width: 1200px) {
+  .secondRow .missionBox {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+  .firstRow, .secondRow {
+    flex-direction: column;
+  }
 }
