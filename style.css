@@ -15,9 +15,8 @@ html, body {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 110%;
-  height: auto;
-  min-height: 110%;
+  width: 120%;
+  height: 120%;
   transform: translate(-50%, -50%) scale(1.05);
   background-image: url('hintergrund.jpg');
   background-position: center;
