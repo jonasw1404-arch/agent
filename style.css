@@ -1,17 +1,18 @@
-/* Vollbild und Hintergrundbild */
+/* Vollbild und fixierter Hintergrund */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100%;
   width: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
   background-color: black;
   background-image: url('hintergrund.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: Arial, sans-serif;
-  color: white;
+  background-attachment: fixed; /* Hintergrund bleibt fixiert */
+  overflow-x: hidden; /* horizontales Scrollen verhindern */
 }
 
 /* Start-Rechteck */
@@ -43,22 +44,20 @@ html, body {
 
 /* Missions-Rechtecke */
 #missionContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 90%;
   max-width: 1400px;
-  z-index: 50;
+  margin: 50px auto; /* Abstand vom oberen Rand */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 /* Reihen */
 .missionRow {
   display: flex;
+  flex-wrap: wrap; /* rutschen untereinander, wenn zu schmal */
   gap: 20px;
+  justify-content: center;
 }
 
 /* Erste Reihe: volle Breite für die beiden Boxen */
@@ -74,6 +73,7 @@ html, body {
 .secondRow .missionBox {
   flex: 1;
   min-width: 200px;
+  max-width: 250px;
   background-color: rgba(0,0,0,0.7);
   padding: 20px;
   border-radius: 10px;
@@ -83,17 +83,4 @@ html, body {
 /* Überschriften */
 .missionBox h2 {
   margin-top: 0;
-}
-
-/* Responsive Anpassung */
-@media (max-width: 1200px) {
-  .secondRow .missionBox {
-    min-width: 180px;
-  }
-}
-
-@media (max-width: 900px) {
-  .firstRow, .secondRow {
-    flex-direction: column;
-  }
 }
