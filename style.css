@@ -6,8 +6,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Hintergrundbild + Blau als Fallback */
     background-color: #1e68ff;
     background-image: url('hintergrund.jpg');
     background-size: cover;
@@ -22,6 +20,21 @@ html, body {
     text-align: center;
     color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Container für beide Felder nebeneinander */
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+/* Einzelnes Codefeld */
+.codeBox {
+    background: rgba(0,0,0,0.3);
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
 }
 
 input {
@@ -42,8 +55,21 @@ button {
     cursor: pointer;
 }
 
-#message {
-    margin-top: 20px;
-    font-size: 22px;
+.message {
+    margin-top: 15px;
+    font-size: 20px;
     font-weight: bold;
+}
+
+/* Shake-Animation für falschen Code */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s;
 }
