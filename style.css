@@ -1,97 +1,102 @@
+/* Hintergrundbild FULL WIDTH – immer an die Breite angepasst */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
+    background-image: url("hintergrund.jpg");
+    background-size: 100% 100vh;
+    background-position: top center;
+    background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    /* Hintergrundbild */
-    background-color: #1e68ff;               /* Fallback-Farbe */
-    background-image: url('hintergrund.jpg');
-    background-size: 100% auto;              /* Breite = Bildschirm, Höhe automatisch */
-    background-position: center top;         /* Zentriert oben */
-    background-repeat: no-repeat;            /* Kein Duplizieren */
 }
 
-body {
-    min-height: 100vh;
-}
-
-/* Startscreen */
-.startScreen {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 40px 50px;
-    border-radius: 12px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-/* Container für beide Codefelder */
-#codeContainer {
-    display: none; /* Standardmäßig versteckt */
-    gap: 30px;
-    flex-direction: row;
-    justify-content: center;
-}
-
-/* Einzelnes Codefeld */
-.codeBox {
-    background: rgba(0,0,0,0.3);
-    padding: 20px 30px;
+/* Startbutton */
+#startButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
     border-radius: 10px;
-    text-align: center;
-    width: 200px;
-}
-
-input {
-    padding: 10px;
-    font-size: 18px;
-    width: 120px;
-    border: none;
-    border-radius: 6px;
-    text-align: center;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 6px;
+    background: #ffffffaa;
     cursor: pointer;
 }
 
-.message {
-    margin-top: 15px;
+/* Versteckt */
+.hidden {
+    display: none;
+}
+
+/* Container für alle Codeboxen */
+#codeContainer {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Jede einzelne Box */
+.code-box {
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    color: white;
+}
+
+/* Überschrift weiß */
+.code-box h2 {
+    color: white;
     font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Eingabefeld */
+.code-box input {
+    width: 90%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.code-box button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Status-Anzeige */
+.code-box p {
+    margin-top: 10px;
+    font-size: 16px;
     font-weight: bold;
 }
 
-/* Shake-Animation für falschen Code */
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 0.5s;
-}
-
-/* Mobile-Responsive: Felder untereinander bei schmalem Bildschirm */
-@media (max-width: 768px) {
+/* 📱 Hochformat: untereinander */
+@media (orientation: portrait) {
     #codeContainer {
         flex-direction: column;
-        gap: 20px;
         align-items: center;
     }
 
-    .codeBox {
+    .code-box {
         width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* 📱 Querformat: nebeneinander */
+@media (orientation: landscape) {
+    #codeContainer {
+        flex-direction: row;
     }
 }
