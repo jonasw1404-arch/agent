@@ -72,10 +72,17 @@ html, body {
 }
 
 /* Eingabefeld + Button */
+.codeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .codeInput {
   width: 70%;
   padding: 6px;
-  margin: 10px 0;
   border-radius: 5px;
   border: none;
   text-align: center;
