@@ -9,16 +9,25 @@
 
 <!-- Startscreen -->
 <div class="startScreen" id="startScreen">
-    <h2>Bereit? Klicke, um den Code zu lösen!</h2>
+    <h2>Bereit? Klicke, um die Codes zu lösen!</h2>
     <button id="startButton">Code lösen</button>
 </div>
 
 <!-- Code-Eingabe Container -->
 <div class="container" id="codeContainer" style="display:none;">
-    <h2>Gib den 4-stelligen Code ein:</h2>
-    <input type="text" id="codeInput" maxlength="4" placeholder="****">
-    <button id="checkButton">OK</button>
-    <div id="message"></div>
+    <div class="codeBox">
+        <h3>Codefeld 1</h3>
+        <input type="text" id="codeInput1" maxlength="4" placeholder="****">
+        <button id="checkButton1">OK</button>
+        <div id="message1" class="message"></div>
+    </div>
+
+    <div class="codeBox">
+        <h3>Codefeld 2</h3>
+        <input type="text" id="codeInput2" maxlength="4" placeholder="****">
+        <button id="checkButton2">OK</button>
+        <div id="message2" class="message"></div>
+    </div>
 </div>
 
 <!-- Hintergrundmusik -->
