@@ -1,38 +1,25 @@
-body {
-    background-color: #1e68ff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 150px;
-    color: white;
-}
+// Sicherstellen, dass das Script erst nach Laden der Seite reagiert
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById("checkButton");
+    const input = document.getElementById("codeInput");
+    const message = document.getElementById("message");
 
-.container {
-    background: rgba(255,255,255,0.15);
-    padding: 30px;
-    display: inline-block;
-    border-radius: 12px;
-}
+    button.addEventListener("click", function() {
+        if (input.value === "5443") {
+            message.style.color = "#00ff8c";
+            message.textContent = "Du hast es geschafft!";
+        } else {
+            message.style.color = "#ff4444";
+            message.textContent = "Falsches Passwort — versuch es nochmal.";
+            input.value = "";
+            input.focus();
+        }
+    });
 
-input {
-    padding: 10px;
-    font-size: 18px;
-    width: 120px;
-    border: none;
-    border-radius: 6px;
-    text-align: center;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-#message {
-    margin-top: 20px;
-    font-size: 22px;
-    font-weight: bold;
-}
+    // Optional: Enter-Taste unterstützt
+    input.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") {
+            button.click();
+        }
+    });
+});
