@@ -1,36 +1,46 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mission</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Start-Rechteck -->
-  <div id="startBox">
-    <h1>Mission Start?</h1>
-    <button id="startButton">Codes lösen</button>
+<div id="raetselContainer" style="display: none; flex-direction: column; gap: 20px; margin-top: 20px;">
+  <!-- Rätsel 1 -->
+  <div class="raetselBox">
+    <h3>Rätsel 1: Geheimzahl</h3>
+    <p>Finde die 4-stellige Zahl, die das Rätsel löst.</p>
+    <input type="text" maxlength="4" class="raetselInput">
+    <button class="checkButton">Prüfen</button>
+    <p class="resultText"></p>
   </div>
 
-  <!-- Missions-Rechtecke, von Anfang an unsichtbar -->
-  <div id="missionContainer" style="display: none;">
-    <div class="missionBox">
-      <h2>Mission Erklärung</h2>
-      <p>Deine Aufgabe ist es, das Geheimnis des Hintergrunds zu entdecken und den Code zu knacken.</p>
-    </div>
-    <div class="missionBox">
-      <h2>Auftrag</h2>
-      <ol>
-        <li>Hinweise sammeln</li>
-        <li>Rätsel lösen</li>
-        <li>Code entschlüsseln</li>
-        <li>Mission bestätigen</li>
-        <li>Bericht abgeben</li>
-      </ol>
-    </div>
+  <!-- Rätsel 2 -->
+  <div class="raetselBox">
+    <h3>Rätsel 2: Code-Knacker</h3>
+    <p>Gib die richtige 4-stellige Kombination ein.</p>
+    <input type="text" maxlength="4" class="raetselInput">
+    <button class="checkButton">Prüfen</button>
+    <p class="resultText"></p>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- Rätsel 3 -->
+  <div class="raetselBox">
+    <h3>Rätsel 3: Zahlen-Geheimnis</h3>
+    <p>Welche 4 Ziffern passen hier?</p>
+    <input type="text" maxlength="4" class="raetselInput">
+    <button class="checkButton">Prüfen</button>
+    <p class="resultText"></p>
+  </div>
+
+  <!-- Rätsel 4 -->
+  <div class="raetselBox">
+    <h3>Rätsel 4: Geheimcode</h3>
+    <p>Tippe die richtige 4-stellige Kombination ein.</p>
+    <input type="text" maxlength="4" class="raetselInput">
+    <button class="checkButton">Prüfen</button>
+    <p class="resultText"></p>
+  </div>
+
+  <!-- Rätsel 5 -->
+  <div class="raetselBox">
+    <h3>Rätsel 5: Der finale Code</h3>
+    <p>Finde die letzte 4-stellige Kombination.</p>
+    <input type="text" maxlength="4" class="raetselInput">
+    <button class="checkButton">Prüfen</button>
+    <p class="resultText"></p>
+  </div>
+</div>
