@@ -7,7 +7,14 @@
 </head>
 <body>
 
-<div class="container">
+<!-- Startscreen -->
+<div class="startScreen" id="startScreen">
+    <h2>Bereit? Klicke, um den Code zu lösen!</h2>
+    <button id="startButton">Code lösen</button>
+</div>
+
+<!-- Code-Eingabe Container -->
+<div class="container" id="codeContainer" style="display:none;">
     <h2>Gib den 4-stelligen Code ein:</h2>
     <input type="text" id="codeInput" maxlength="4" placeholder="****">
     <button id="checkButton">OK</button>
