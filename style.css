@@ -1,4 +1,3 @@
-/* Vollbild und fixierter Hintergrund */
 html, body {
   margin: 0;
   padding: 0;
@@ -11,11 +10,10 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; /* Hintergrund fixiert */
-  overflow-x: hidden; /* kein horizontales Scrollen */
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* Start-Rechteck */
 #startBox {
   position: fixed;
   top: 50%;
@@ -28,10 +26,6 @@ html, body {
   z-index: 100;
 }
 
-#startBox h1 {
-  margin-bottom: 20px;
-}
-
 #startBox button {
   padding: 10px 20px;
   font-size: 16px;
@@ -40,9 +34,9 @@ html, body {
   border-radius: 5px;
   background-color: white;
   color: black;
+  font-weight: bold;
 }
 
-/* Missions-Rechtecke */
 #missionContainer {
   width: 90%;
   max-width: 1400px;
@@ -52,15 +46,13 @@ html, body {
   gap: 30px;
 }
 
-/* Reihen */
 .missionRow {
   display: flex;
-  flex-wrap: wrap; /* untereinander, wenn zu schmal */
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-/* Erste Reihe: volle Breite für die beiden Boxen */
 .firstRow .missionBox {
   flex: 1;
   min-width: 300px;
@@ -69,7 +61,6 @@ html, body {
   border-radius: 10px;
 }
 
-/* Zweite Reihe: 5 Rätsel nebeneinander */
 .secondRow .missionBox {
   flex: 1;
   min-width: 200px;
@@ -80,10 +71,10 @@ html, body {
   text-align: center;
 }
 
-/* Eingabefelder und Buttons */
+/* Eingabefeld + Button */
 .codeInput {
   width: 70%;
-  padding: 5px;
+  padding: 6px;
   margin: 10px 0;
   border-radius: 5px;
   border: none;
@@ -92,7 +83,7 @@ html, body {
 }
 
 .checkButton {
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -101,13 +92,11 @@ html, body {
   font-weight: bold;
 }
 
-/* Ergebnistext */
 .result {
   margin-top: 5px;
   font-weight: bold;
 }
 
-/* Überschriften */
 .missionBox h2 {
   margin-top: 0;
 }
