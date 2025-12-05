@@ -3,6 +3,9 @@ const startBox = document.getElementById('startBox');
 const missionContainer = document.getElementById('missionContainer');
 
 startButton.addEventListener('click', () => {
-  startBox.style.display = 'none';           // Start-Rechteck ausblenden
-  missionContainer.style.display = 'flex';   // Missions-Rechtecke anzeigen
+  // Start-Rechteck ausblenden
+  startBox.style.display = 'none';
+  
+  // Missions-Rechtecke anzeigen
+  missionContainer.style.display = 'flex';
 });
