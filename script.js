@@ -11,6 +11,8 @@ startButton.addEventListener('click', () => {
   missionContainer.style.display = 'flex';
 
   // Musik starten
-  bgMusic.volume = 0.3; // Lautstärke 30%
-  bgMusic.play();
+  bgMusic.volume = 0.3;
+  bgMusic.play().catch(err => {
+    console.log('Musik konnte nicht automatisch starten:', err);
+  });
 });
