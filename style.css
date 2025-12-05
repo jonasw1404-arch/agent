@@ -5,7 +5,7 @@ html, body {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  font-family: 'Roboto Mono', monospace;
+  font-family: sans-serif; /* Standard-Schriftart */
   color: white;
   background-color: black;
 }
@@ -34,23 +34,13 @@ html, body {
   100% { transform: translate(-50%, -50%) scale(1.05) translateX(0px) translateY(0px); }
 }
 
-/* TOP SECRET Header */
-.topsecret {
-  font-size: 20px;
-  color: #ff2d2d;
-  letter-spacing: 3px;
-  text-align: center;
-  margin: 20px 0;
-}
-
 /* Start-Rechteck */
 #startBox {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0,0.7);
-  backdrop-filter: blur(6px);
+  background-color: rgba(128,128,128,0.5); /* grau transparent */
   padding: 40px 60px;
   text-align: center;
   border-radius: 10px;
@@ -69,12 +59,10 @@ html, body {
   border-radius: 5px;
   background-color: #0a4fa3;
   color: white;
-  box-shadow: 0 0 10px #69a7ff55;
   transition: all 0.2s ease-in-out;
 }
 
 #startBox button:hover {
-  box-shadow: 0 0 20px #69a7ffaa;
   transform: translateY(-2px);
 }
 
@@ -96,42 +84,8 @@ html, body {
 .missionBox {
   flex: 1;
   min-width: 250px;
-  background-color: rgba(0,0,0,0.45);
-  backdrop-filter: blur(6px);
+  background-color: rgba(128,128,128,0.5); /* grau transparent */
   padding: 20px;
-  border-left: 3px solid #f5c518;
   border-radius: 10px;
   margin-bottom: 20px;
-}
-
-.missionBox h2 {
-  margin-top: 0;
-}
-
-/* Optionales Overlay für Noise/TV-Effect */
-.overlay-noise {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: url('static-noise.png'); /* optionales Noise-Bild */
-  opacity: 0.03;
-  mix-blend-mode: overlay;
-}
-
-/* Optional Typing-Animation */
-.typing {
-  overflow: hidden;
-  border-right: .15em solid #fff;
-  white-space: nowrap;
-  animation: typing 3s steps(30,end), blink .7s infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  0%, 50%, 100% { border-color: transparent }
-  25%, 75% { border-color: white }
 }
